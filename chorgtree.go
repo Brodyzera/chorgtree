@@ -58,7 +58,7 @@ func InitTree(root string, username string, password string) *Node {
 	// Build remaining Nodes
 	g.Add(1)
 	node.buildOrgTree(username, password, g)
-	g.Done()
+	g.Wait()
 
 	return node
 }
