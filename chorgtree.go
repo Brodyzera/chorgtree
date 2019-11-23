@@ -41,7 +41,6 @@ type Application struct {
 func errorCheck(err error) {
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "%s", err)
-		os.Exit(1)
 	}
 }
 
@@ -99,7 +98,6 @@ func getOrganizationMetrics(orgID string, username string, password string) []by
 
 	if resp.StatusCode != http.StatusOK {
 		fmt.Println("Non-OK HTTP status:", resp.StatusCode)
-		os.Exit(1)
 	}
 
 	body, err := ioutil.ReadAll(resp.Body)
